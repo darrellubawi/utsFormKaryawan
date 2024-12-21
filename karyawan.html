@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Karyawan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css"> <!-- Tambahkan ini jika ada CSS eksternal -->
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="d-flex">
+    <nav class="bg-primary text-white p-3 sidebar" style="width: 250px; height: 100vh;">
+      <div class="text-center mb-4">
+        <h4>Achmad Darrel Group</h4>
+        <p>Administrator</p>
+      </div>
+      <ul class="list-unstyled">
+        <li><a href="index.html" class="text-white btn btn-primary w-100 my-2">Dashboard</a></li>
+        <li><a href="karyawan.html" class="text-white btn btn-primary w-100 my-2">Karyawan</a></li>
+        <li><a href="jabatan.html" class="text-white btn btn-primary w-100 my-2">Jabatan</a></li>
+        <li><a href="divisi.html" class="text-white btn btn-primary w-100 my-2">Divisi</a></li>
+        <li><a href="absensi.html" class="text-white btn btn-primary w-100 my-2">Absensi</a></li>
+        <li><a href="izin.html" class="text-white btn btn-primary w-100 my-2">Izin</a></li>
+        <li><a href="lembur.html" class="text-white btn btn-primary w-100 my-2">Lembur</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+      <div class="p-4">
+        <h2 class="text-primary">Data Karyawan</h2>
+        <p>Ini adalah halaman untuk menampilkan data karyawan.</p>
+        <main class="container-fluid">
+          <div class="p-4">
+            <h2 class="text-primary">Data Karyawan</h2>
+            <p>Ini adalah halaman untuk menampilkan data karyawan.</p>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nama</th>
+                  <th>Jabatan</th>
+                  <th>Divisi</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="employee-table-body">
+                <!-- Data akan dimasukkan secara dinamis di sini -->
+              </tbody>
+            </table>
+          </div>
+        </main>
+        
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Data karyawan contoh
+    // Data karyawan contoh
+const employees = [
+    { id: 1, name: 'Achmad Darrel', position: 'Manager', division: 'HR', status: 'Aktif' },
+    { id: 2, name: 'Siti Aminah', position: 'Developer', division: 'IT', status: 'Aktif' },
+    { id: 3, name: 'Budi Santoso', position: 'Analyst', division: 'Finance', status: 'Tidak Aktif' },
+    { id: 4, name: 'Dewi Lestari Aselole', position: 'Staff', division: 'Marketing', status: 'Aktif' },
+    { id: 5, name: 'Fajar Sinar Pagi', position: 'Intern', division: 'IT', status: 'Aktif' }
+    // Sekarang total ada 5 data karyawan
+];
+
+  
+    // Fungsi untuk merender data karyawan ke dalam tabel
+    function renderEmployeeTable() {
+      const tableBody = document.getElementById('employee-table-body');
+      employees.forEach(employee => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${employee.id}</td>
+          <td>${employee.name}</td>
+          <td>${employee.position}</td>
+          <td>${employee.division}</td>
+          <td>${employee.status}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+  
+    // Panggil fungsi untuk merender tabel saat halaman dimuat
+    document.addEventListener('DOMContentLoaded', renderEmployeeTable);
+  </script>
+  
+</body>
+</html>
+<ul class="list-unstyled">
+  <li><a href="index.html" class="text-white btn btn-primary w-100 my-2">Dashboard</a></li>
+  <li><a href="karyawan.html" class="text-white btn btn-primary w-100 my-2">Karyawan</a></li>
+  <li><a href="jabatan.html" class="text-white btn btn-primary w-100 my-2">Jabatan</a></li>
+  <li><a href="divisi.html" class="text-white btn btn-primary w-100 my-2">Divisi</a></li>
+  <li><a href="absensi.html" class="text-white btn btn-primary w-100 my-2">Absensi</a></li>
+  <li><a href="izin.html" class="text-white btn btn-primary w-100 my-2">Izin</a></li>
+  <li><a href="lembur.html" class="text-white btn btn-primary w-100 my-2">Lembur</a></li>
+</ul>
